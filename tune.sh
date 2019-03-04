@@ -15,7 +15,7 @@ grep -v '^#' /etc/sysctl-1.conf | grep . >> ${CURRENT_SYSCTL_FILE}
 BACKUP_SYSCTL="sysctl.conf-$(date +%F-%s)"
 echo "moving sysctl.conf to /etc/${BACKUP_SYSCTL}"
 mv /etc/sysctl.conf /etc/${BACKUP_SYSCTL}
-
+apt install bc 
 which bc
 if [ $? -ne 0 ]; then
     echo "This script require GNU bc, cf. http://www.gnu.org/software/bc/"
